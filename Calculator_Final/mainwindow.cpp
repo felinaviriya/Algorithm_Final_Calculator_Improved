@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QRegularExpression>
+#include <QMessageBox>
 
 double calculatedValue = 0.0;
 bool divTrigger = false;
@@ -165,5 +166,16 @@ void MainWindow::on_pushButton_clicked()
     }
 
     ui->textBrowser->setText("Previous Calculations:\n" + historyText);
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QMessageBox msgBox;
+    msgBox.setWindowTitle("Felina_FinalProject_CalculationHistory");
+    msgBox.setTextFormat(Qt::RichText);
+    msgBox.setBaseSize(QSize(400, 300));
+    msgBox.setText("This is my algorithm :<br />Users will see a calculator in the GUI. Users will be able to use this calculator like a normal calculator. They can input any number and mathematical operator to get their desired calculation. Users can also view the calculations they have done previously by pressing the 'History' button.");
+    msgBox.exec();
 }
 
